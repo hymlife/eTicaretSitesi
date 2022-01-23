@@ -1,0 +1,69 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+  <div class="container">
+
+   
+    <a class="navbar-brand waves-effect" routerLink="/">  <img src="assets/HYMLOGO.png"   /> <span class="sr-only">(current)</span></a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+   
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+     
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link waves-effect" href="#"  routerLink="/">AnaSayfa
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li *ngIf="authService.user" class="nav-item">
+          <a class="nav-link" routerLink="/login"><i class="fa fa-user" aria-hidden="true"></i></a>
+          
+        </li>
+
+        <li>          
+            
+        </li>
+  
+        <li *ngIf="!authService.user" ngbDropdown class="nav-item dropdown">
+          <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false"> <i class="fa fa-user"></i>{{" Yönetici "}}</a>
+          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" routerLink="/my-orders">Verilen Siparişler</a>
+                     
+            <a class="dropdown-item"  routerLink="/admin/products">Ürünleri Yönet</a>           
+           
+          </div>
+
+          
+        </li>
+       
+        
+      </ul>
+
+     
+      <ul class="navbar-nav nav-flex-icons">
+
+        <li>
+          <a class="nav-link waves-effect"  routerLink="/login">Giriş İşlemleri</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link waves-effect">
+            <span class="badge red z-depth-1 mr-1"> {{itemCount }} </span>
+            <i class="fas fa-shopping-cart"></i>
+            <span class="clearfix d-none d-sm-inline-block"> <a class="nav-link"
+              routerLink="/shopping-cart">
+              Sepetim </a> </span>
+          </a>
+        </li>
+       
+      </ul>
+
+    </div>
+
+  </div>
+</nav>

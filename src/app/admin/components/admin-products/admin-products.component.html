@@ -1,0 +1,17 @@
+<p><button routerLink="/admin/addproduct" type="submit" class="btn btn-primary">Ürün Ekle</button></p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Başlık</td>
+            <td>Fiyat</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of products|async">
+            <td>{{p.title}}</td>
+            <td>{{p.price}} TL</td>
+            <td><a [routerLink]="['/admin/addproduct/',p.$key]">Düzenle</a></td>
+        </tr>
+    </tbody>
+</table>

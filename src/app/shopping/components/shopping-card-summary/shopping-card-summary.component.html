@@ -1,0 +1,19 @@
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Sipariş Sepeti</h5>
+      <p class="card-text">Sepetinizde {{itemCount}} Adet Ürün Vardır.</p>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let item of listItems">
+          {{item.quantity}} x {{item.product.title}}
+        
+        <div class="float-right">{{item.quantity * item.product.price|currency:'TL':true}} </div>
+      </li>
+      <li class="list-group-item" >
+        <b>Total : 
+          <div class="float-right">{{total| currency:'TL':true}}</div>
+        </b>
+      </li>
+      
+      </ul>
+    </div>
+  </div>

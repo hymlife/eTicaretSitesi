@@ -1,0 +1,12 @@
+<product-filter [category]="category"></product-filter>
+
+<section class="text-center mb-4">
+ 
+  <div class="row wow fadeIn">
+    <ng-container class="row wow fadeIn" *ngFor="let p of filteredProducts  let i=index">
+      <product-card class="col-lg-3 col-md-6 mb-4" [shopping-cart]="cart" [product]="p"></product-card>
+      <div class="w-100" *ngIf="(i+1)%4===0"></div>
+    </ng-container>
+   
+  </div>
+</section>
