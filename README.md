@@ -1,1 +1,2 @@
-# eTicaretSitesi
+npm install
+ng serve
